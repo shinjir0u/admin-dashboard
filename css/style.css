@@ -42,13 +42,18 @@
 
 /* My Css */
 
+:root {
+  font-family: "Roboto", sans-serif;
+  --background-blue-color: rgba(24, 146, 211, 255);
+}
+
 .container {
     height: 100vh;
     display: grid;
     grid-template-areas: 
                     "sidebar header"
                     "sidebar main-content";
-    grid-template-columns: minmax(300px, 1fr) minmax(700px, 4fr);
+    grid-template-columns: minmax(275px, 1fr) minmax(700px, 4fr);
     grid-template-rows: minmax(100px, 1fr) minmax(500px, 4fr);
     gap: 1em;
 }
@@ -56,8 +61,40 @@
 .sidebar {
     grid-area: sidebar;
     display: flex;
-    gap: 2em;
+    gap: 4em;
     flex-direction: column;
+    color: white;
+    font-weight: bolder;
+    background-color: var(--background-blue-color);
+    padding: 1em;
+}
+
+.logo-text-container,
+.menus,
+.help-links {
+  display: grid;
+  grid-template-columns: minmax(10px, 1fr) minmax(60px, 4fr);
+  align-items: center;
+  gap: 1em 0.25em;
+}
+
+.logo-text {
+  font-size: 1.75rem;
+}
+
+svg {
+  fill: white;
+  width: 1.3rem;
+  justify-self: center;
+}
+
+.dashboard-logo {
+  width: 3em;
+}
+
+a[href="#"] {
+  text-decoration: none;
+  color: white;
 }
 
 .header {
@@ -101,16 +138,6 @@
 }
 
 /* Temp */
-
-.container > div {
-    border: 1px solid purple;
-    background-color: rgb(0, 255, 255, 0.1);
-}
-
-.sidebar > div {
-    background-color: rgb(165, 42, 42, 0.2);
-    border: 1px solid blue;
-}
 
 .header > div {
   background-color: rgb(0, 0, 0, 0.2);
