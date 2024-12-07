@@ -46,6 +46,7 @@
   font-family: "Roboto", sans-serif;
   --background-blue-color: rgba(24, 146, 211, 255);
   --background-grey-color: rgba(225, 232, 240, 255);
+  --border-style-color: rgb(224, 177, 52);
 }
 
 .container {
@@ -196,13 +197,45 @@ a[href="#"] {
 }
 
 .project-container {
+  padding: 1.2rem;
   display: grid;
-  grid-template-rows: minmax(10px, 1fr) minmax(300px, 5fr);
+  grid-template-rows: minmax(10px, 40px) minmax(300px, 5fr);
+  background-color: var(--background-grey-color);
+}
+
+.projects-label {
+  font-weight: bold;
+  align-self: end;
+  font-size: 1.25rem;
 }
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: repeat(2, minmax(200px, 250px));
+  grid-auto-rows: minmax(200px, 250px);
+  gap: 1.5rem;
+  padding: 8px;
+}
+
+.project {
+  display: grid;
+  grid-template-rows: min-content auto minmax(10px, 20px);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: -8px 0 var(--border-style-color);
+  background-color: white;
+}
+
+.interaction-icons {
+  align-self: end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.interaction-icons > svg {
+  width: 1.5rem;
 }
 
 .announcement-container {
@@ -213,17 +246,4 @@ a[href="#"] {
 .trending {
   display: grid;
   grid-template-columns: minmax(10px, 1fr) minmax(100px, 2fr);
-}
-
-/* Temp */
-
-.main-content > div {
-  background-color: rgb(127, 255, 0, 0.2);
-  border: 1px solid orangered;
-}
-
-.project-container > div,
-.announcement-container > div {
-  background-color: rgb(47, 79, 79, 0.2);
-  border: 1px solid yellow;
 }
