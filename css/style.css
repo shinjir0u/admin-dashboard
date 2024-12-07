@@ -45,6 +45,7 @@
 :root {
   font-family: "Roboto", sans-serif;
   --background-blue-color: rgba(24, 146, 211, 255);
+  --background-grey-color: rgba(225, 232, 240, 255);
 }
 
 .container {
@@ -54,8 +55,7 @@
                     "sidebar header"
                     "sidebar main-content";
     grid-template-columns: clamp(275px, 20%, 350px) minmax(700px, 4fr);
-    grid-template-rows: minmax(100px, 1fr) minmax(500px, 4fr);
-    gap: 1em;
+    grid-template-rows: minmax(150px, 1fr) minmax(500px, 4fr);
 }
 
 .sidebar {
@@ -102,15 +102,91 @@ a[href="#"] {
 .header {
     grid-area: header;
     display: grid;
-    grid-template-rows: minmax(20px, 1fr) minmax(50px, 2fr);
+    grid-template-rows: minmax(50px, 1fr) minmax(100px, 1fr);
+    font-weight: bold;
+    box-shadow: 0 2px 10px;
 }
 
-.upper-header-row {
+.upper-header-row,
+.lower-header-row {
   display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-icon,
+.notification-icon {
+  width: 2rem;
+}
+
+.search-bar, 
+.action-button  {
+  margin-right: auto;
+  appearance: none;
+  border: none;
+  border-radius: 40px;
+  height: 33px;
+  width: max(100px, 50%);
+  background-color: var(--background-grey-color);
+}
+
+.account-avater,
+.profile-avater {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 1px 1px 1px;
+}
+
+.account {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .lower-header-row {
-  display: flex;
+  justify-content: space-between;
+}
+
+.account-info {
+  display: grid;
+  grid-template-areas: 
+              "avater greeting"
+              "avater name";
+  gap: 0 1rem;
+  align-items: center;
+}
+.greeting {
+  grid-area: greeting;
+  font-size: 0.9rem;
+  align-self: end;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  grid-area: name;
+  align-self: start;
+  
+}
+
+.profile-avater {
+  width: 75px;
+  grid-area: avater;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 2rem;
+}
+
+.action-button {
+  background-color: var(--background-blue-color);
+  color: white;
+  height: 37px;
 }
 
 .main-content {
@@ -140,11 +216,6 @@ a[href="#"] {
 }
 
 /* Temp */
-
-.header > div {
-  background-color: rgb(0, 0, 0, 0.2);
-  border: 1px solid white;
-}
 
 .main-content > div {
   background-color: rgb(127, 255, 0, 0.2);
