@@ -53,7 +53,7 @@
     grid-template-areas: 
                     "sidebar header"
                     "sidebar main-content";
-    grid-template-columns: minmax(275px, 1fr) minmax(700px, 4fr);
+    grid-template-columns: clamp(275px, 20%, 350px) minmax(700px, 4fr);
     grid-template-rows: minmax(100px, 1fr) minmax(500px, 4fr);
     gap: 1em;
 }
@@ -82,13 +82,15 @@
   font-size: 1.75rem;
 }
 
-svg {
+ .dashboard-icon,
+ .menu-icon,
+ .help-link-icon {
   fill: white;
   width: 1.3rem;
   justify-self: center;
 }
 
-.dashboard-logo {
+.dashboard-icon {
   width: 3em;
 }
 
